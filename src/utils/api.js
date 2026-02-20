@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+const DEFAULT_BACKEND_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://placeprep-backend.onrender.com'
+    : 'http://localhost:8000';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || DEFAULT_BACKEND_URL;
 export const API_URL = `${BACKEND_URL}/api`;
 
 const api = axios.create({
