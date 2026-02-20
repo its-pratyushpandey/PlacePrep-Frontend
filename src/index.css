@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Locked light theme tokens (HSL components) */
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        /* Indigo-600-ish */
+        --primary: 243 75% 59%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 5% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 240 5% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 240 5% 96%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 220 13% 95%;
+        --ring: 243 75% 59%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+
+    /* If any legacy `.dark` class exists, keep the UI light */
+    .dark {
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 5% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 240 5% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 240 5% 96%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 220 13% 95%;
+        --ring: 217 91% 60%;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-body;
+        min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading tracking-tight;
+    }
+}
+
+@layer utilities {
+  .glass-panel {
+        @apply bg-white border border-gray-200;
+  }
+
+  .glass-card {
+        @apply bg-white border border-gray-200 rounded-2xl shadow-sm;
+  }
+
+    .glow-border {
+        @apply ring-1 ring-primary/30 shadow-[0_0_15px_rgba(99,102,241,0.3)];
+    }
+    .btn-primary {
+        @apply bg-indigo-600 text-white hover:bg-indigo-700 rounded-xl px-6 py-2.5 font-medium shadow-sm transition-colors;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200 rounded-xl px-6 py-2.5 font-medium transition-colors;
+    }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
